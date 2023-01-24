@@ -1,0 +1,31 @@
+<div class="auth">
+    <div *ngIf="!showLogin" class="signup">
+        <h1>Sign-Up</h1>
+        <form #Signup="ngForm" (ngSubmit)="onSubmit(Signup.value)" class="common-form" action="">
+            <input class="form-input" ngModel type="text" name="userName" id="" placeholder="Enter Name">
+            <input class="form-input" ngModel type="text" name="userEmail" id="" placeholder="Enter Email Address">
+            <input class="form-input" ngModel type="password" name="password" id="" placeholder="Enter Password">
+            <button class="form-btn">Sign Up</button>
+            <p class="para">Already Have Account? <a class="flipLink" (click)="openLogin()">Click To Login</a></p>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- Login Area -->
+
+
+
+<div class="auth">
+    <div *ngIf="showLogin" class="signup">
+        <h1>Login</h1>
+        <form #Login="ngForm" (ngSubmit)="onLogin(Login.value)" class="common-form" action="">
+            <input class="form-input" ngModel type="text" name="userEmail" id="" placeholder="Enter Email Address">
+            <input class="form-input" ngModel type="password" name="password" id="" placeholder="Enter Password">
+            <button class="form-btn">Login</button>
+            <p class="para">Don't Have Account?<a class="flipLink" (click)="openSignUp()"> Click To Sign-Up</a></p>
+        </form>
+    </div>
+</div>
+
